@@ -140,7 +140,7 @@ Please provide a detailed functional medicine analysis incorporating the medical
 
       pdf.setFontSize(11)
       pdf.setFont('helvetica', 'normal')
-      patientData.symptoms.forEach((symptom) => {
+      patientData.symptoms.forEach((symptom: string) => {
         pdf.text(`• ${symptom}`, margin, yPosition)
         yPosition += 12
       })
@@ -156,7 +156,7 @@ Please provide a detailed functional medicine analysis incorporating the medical
 
       pdf.setFontSize(11)
       pdf.setFont('helvetica', 'normal')
-      patientData.medicalHistory.forEach((item) => {
+      patientData.medicalHistory.forEach((item: string) => {
         pdf.text(`• ${item}`, margin, yPosition)
         yPosition += 12
       })
