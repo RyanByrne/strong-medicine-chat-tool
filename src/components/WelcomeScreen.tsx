@@ -26,7 +26,7 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
               </div>
               <h1 className="text-3xl font-heading font-bold text-white">
                 Strong Medicine
-                <span className="block text-accent text-lg font-medium">AI Medical Screening</span>
+                <span className="block text-accent text-lg font-medium">Patient Onboarding</span>
               </h1>
             </div>
           </div>
@@ -34,11 +34,11 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
           {/* Hero Content */}
           <div className="mb-16">
             <h2 className="font-heading text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Get Personalized Health
-              <span className="block text-accent">Insights in Minutes</span>
+              Welcome to Your
+              <span className="block text-accent">Health Journey</span>
             </h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-8">
-              Our AI-powered screening tool analyzes your symptoms, medical history, and health concerns to provide comprehensive insights and connect you with the right specialists.
+              Our AI onboarding assistant will guide you through a personalized health assessment. Your responses will be reviewed by Dr. Johnson, who will provide custom recommendations and a personal consultation plan.
             </p>
           </div>
 
@@ -48,11 +48,11 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 ),
-                title: "Conversational Assessment",
-                description: "Natural chat interface that asks intelligent follow-up questions"
+                title: "Personal Doctor Review",
+                description: "Dr. Johnson personally reviews your assessment to create a custom plan"
               },
               {
                 icon: (
@@ -60,17 +60,17 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
-                title: "Privacy Focused",
-                description: "Your health information is encrypted and never stored permanently"
+                title: "Secure & Confidential",
+                description: "HIPAA-compliant platform ensures your health data stays private"
               },
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
-                title: "Comprehensive Report",
-                description: "Detailed analysis with specialist recommendations and next steps"
+                title: "Quick & Convenient",
+                description: "Complete your assessment in 5-10 minutes from anywhere"
               }
             ].map((feature, index) => (
               <div key={feature.title} className="card text-center group">
@@ -90,16 +90,16 @@ export default function WelcomeScreen({ onStart }: WelcomeScreenProps) {
           {/* CTA Section */}
           <div className="card max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-heading font-bold text-gray-900 mb-4">
-              Ready to Start Your Health Assessment?
+              Ready to Begin Your Journey?
             </h3>
             <p className="text-gray-600 mb-8">
-              The screening takes 5-10 minutes and provides immediate insights into your health concerns.
+              In just 5-10 minutes, our AI assistant will gather the information Dr. Johnson needs to create your personalized health plan.
             </p>
             <button 
               onClick={onStart}
               className="btn-primary text-lg px-8 py-4 group"
             >
-              <span className="mr-2">Start Health Screening</span>
+              <span className="mr-2">Begin Onboarding</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

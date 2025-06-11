@@ -35,7 +35,7 @@ export interface PatientData {
 const INITIAL_MESSAGE: Message = {
   id: '1',
   type: 'assistant',
-  content: "Hello! I'm your AI health screening assistant. I'll ask you some questions about your health to provide personalized insights and recommendations. Let's start with some basic information. What's your age and gender?",
+  content: "Welcome! I'm your Strong Medicine onboarding assistant. I'll guide you through a personalized assessment that Dr. Johnson will review to create your custom health plan. This information helps us understand your unique needs and match you with the right approach. Let's start with the basics - what's your name, age, and gender?",
   timestamp: new Date()
 }
 

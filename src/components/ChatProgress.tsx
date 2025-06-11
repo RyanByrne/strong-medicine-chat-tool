@@ -21,7 +21,7 @@ export default function ChatProgress({ progress, currentStage }: ChatProgressPro
     <div className="card">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-heading font-semibold text-gray-900">
-          Health Screening Progress
+          Onboarding Progress
         </h3>
         <span className="text-sm font-medium text-accent">
           {Math.round(progress)}% Complete

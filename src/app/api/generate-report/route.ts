@@ -32,25 +32,48 @@ interface Message {
   timestamp: Date
 }
 
-const REPORT_SYSTEM_PROMPT = `You are a functional medicine practitioner generating a comprehensive health screening report. Based on the patient data and conversation, create a detailed analysis with:
+const REPORT_SYSTEM_PROMPT = `You are preparing a patient onboarding summary for Dr. Johnson's review at Strong Medicine. This report will help Dr. Johnson create a personalized treatment plan during the patient's consultation.
 
-1. PATIENT SUMMARY
-2. SYMPTOMS ANALYSIS
-3. POTENTIAL ROOT CAUSES (functional medicine perspective)
-4. LIFESTYLE FACTORS
-5. RECOMMENDED SPECIALISTS
-6. NEXT STEPS
-7. LIFESTYLE RECOMMENDATIONS
+Create a comprehensive summary including:
 
-Focus on functional medicine principles:
-- Root cause analysis
-- Systems thinking
-- Personalized approach
-- Lifestyle medicine
+1. PATIENT OVERVIEW
+   - Demographics and contact information
+   - Primary health concerns
+   - Goals and expectations
 
-IMPORTANT: This is a screening report, NOT a diagnosis. Always include appropriate disclaimers.
+2. CURRENT HEALTH STATUS
+   - Presenting symptoms and duration
+   - Impact on quality of life
+   - Previous treatments attempted
 
-Format the response in clear sections with headers. Be thorough but accessible to patients.`
+3. MEDICAL BACKGROUND
+   - Current medications and supplements
+   - Past medical history
+   - Family health history
+
+4. LIFESTYLE ASSESSMENT
+   - Sleep quality and patterns
+   - Stress levels and management
+   - Diet and nutrition habits
+   - Exercise and movement
+   - Work-life balance
+
+5. FUNCTIONAL MEDICINE CONSIDERATIONS
+   - Potential root causes to investigate
+   - Systems that may need support
+   - Lifestyle factors to address
+
+6. RECOMMENDED CONSULTATION FOCUS
+   - Priority areas for Dr. Johnson to address
+   - Suggested testing or assessments
+   - Potential treatment approaches
+
+7. PATIENT ENGAGEMENT
+   - Readiness for change
+   - Support systems
+   - Preferred communication style
+
+Note: This is an internal document for Dr. Johnson's review to prepare for the patient consultation.`
 
 export async function POST(req: NextRequest) {
   try {
@@ -102,11 +125,14 @@ Please provide a detailed functional medicine analysis incorporating the medical
     // Header
     pdf.setFontSize(20)
     pdf.setFont('helvetica', 'bold')
-    pdf.text('Strong Medicine Health Screening Report', margin, 30)
+    pdf.text('Patient Onboarding Summary', margin, 30)
+    
+    pdf.setFontSize(14)
+    pdf.setFont('helvetica', 'normal')
+    pdf.text('For Dr. Johnson - Strong Medicine', margin, 45)
     
     pdf.setFontSize(12)
-    pdf.setFont('helvetica', 'normal')
-    pdf.text(`Generated: ${new Date().toLocaleDateString()}`, margin, 45)
+    pdf.text(`Date: ${new Date().toLocaleDateString()}`, margin, 55)
 
     let yPosition = 65
 
@@ -233,13 +259,23 @@ Please provide a detailed functional medicine analysis incorporating the medical
 
     pdf.setFontSize(11)
     pdf.setFont('helvetica', 'normal')
-    const disclaimer = `This health screening report is for informational purposes only and is not intended to replace professional medical advice, diagnosis, or treatment. The analysis provided is based on functional medicine principles and the information you provided during the screening.
+    const disclaimer = `This patient onboarding summary has been prepared for Dr. Johnson's review at Strong Medicine. The information contained in this report was collected through our AI-assisted onboarding process to help Dr. Johnson prepare for your personal consultation.
 
-This report does not constitute a medical diagnosis. Always seek the advice of your physician or other qualified healthcare provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read in this report.
+NEXT STEPS:
+Dr. Johnson will review this information and contact you within 2-3 business days to schedule your consultation. During your consultation, Dr. Johnson will:
 
-Strong Medicine functional medicine practitioners are available for comprehensive consultations to develop personalized treatment plans based on these findings.
+• Discuss your health concerns in detail
+• Review potential treatment options
+• Order any necessary testing
+• Create your personalized treatment plan
+• Answer all your questions
 
-For appointments and consultations, please visit: strongmedicine.com`
+If you have urgent health concerns, please contact our office directly at (555) 123-4567.
+
+We look forward to partnering with you on your health journey.
+
+Strong Medicine - Where Healing Begins
+strongmedicine.com`
 
     const disclaimerLines = pdf.splitTextToSize(disclaimer, maxWidth)
     let disclaimerY = 50

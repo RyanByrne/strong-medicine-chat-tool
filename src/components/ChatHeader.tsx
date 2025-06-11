@@ -23,7 +23,7 @@ export default function ChatHeader({ progress, currentStage, onGenerateReport, s
               <h1 className="text-lg font-heading font-bold text-gray-900">
                 Strong Medicine
               </h1>
-              <p className="text-sm text-gray-600">AI Health Screening</p>
+              <p className="text-sm text-gray-600">Patient Onboarding</p>
             </div>
           </div>
 

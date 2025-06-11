@@ -5,9 +5,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AI Medical Screening Tool - Strong Medicine',
-  description: 'Intelligent medical screening and assessment tool to help identify potential health concerns and connect you with the right specialists.',
-  keywords: 'medical screening, health assessment, AI diagnosis, functional medicine, health analysis',
+  title: 'Patient Onboarding - Strong Medicine',
+  description: 'Begin your personalized health journey with Strong Medicine. Our AI assistant helps Dr. Johnson understand your unique needs to create a custom treatment plan.',
+  keywords: 'patient onboarding, functional medicine, personalized health, Dr. Johnson, Strong Medicine',
 }
 
 export default function RootLayout({
